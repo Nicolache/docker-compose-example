@@ -1,0 +1,23 @@
+#Docker version 17.05.0-ce, build 89658be
+#docker-compose version 1.24.1, build 4667896
+version: '3.2'
+services:
+  mariadb:
+    image: mariadb:10.2
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: mybb
+      MYSQL_USER: mybb
+      MYSQL_PASSWORD: changeme
+    #networks:
+    #  - backend
+    restart: on-failure
+    volumes:
+     - ${PWD}/mariadb:/var/lib/mysql
+
+#networks:
+#  backend:
+#    external:
+#      name: host
+##    driver: host
+    network_mode: "host"
