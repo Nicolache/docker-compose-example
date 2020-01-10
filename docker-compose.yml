@@ -9,6 +9,7 @@ services:
       MYSQL_DATABASE: mybb
       MYSQL_USER: mybb
       MYSQL_PASSWORD: changeme
+      TZ: Europe/Stockholm
     #networks:
     #  - backend
     restart: on-failure
